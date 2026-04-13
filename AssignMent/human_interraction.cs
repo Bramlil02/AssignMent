@@ -92,9 +92,8 @@ namespace AssignMent
                     continue;
 
                 }
+                //Input and convert to lowercase for easier comparison
                 UInput = UInput.ToLower();
-
-
 
 
                 if (UInput.Contains("what can i ask"))
@@ -127,6 +126,8 @@ namespace AssignMent
                     {
                         Console.WriteLine("PBot: You can ask me about passwords, phishing, and safe browsing.");
                     }
+
+
                     //Cybersecurity topics 
                     else if (UInput.Contains("password"))
                     {
