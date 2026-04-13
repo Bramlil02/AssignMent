@@ -8,47 +8,42 @@ namespace AssignMent
 
     public class AsciiLogo
     {
-        string fupath = AppDomain.CurrentDomain.BaseDirectory;
-
-        private void asci()
+        public AsciiLogo()
         {
-            //path of the logo [ where the logo is ]
-            string path = fupath.Replace(@"\\AsciiLogo.cs", @"logo.jpg");
+            string logo_p = AppDomain.CurrentDomain.BaseDirectory;
 
-            Bitmap image = new Bitmap(path);
+            string path = logo_p.Replace("bin\\Debug\\", ""); // Adjust the path to point to the Resources folder
 
-            // Resize for better console fit
-            int width = 150;
-            int height = 70; //(image.Height * width) / image.Width;
-            Bitmap resized = new Bitmap(image, new Size(width, height));
+            string file_location = Path.Combine(path, "logo.jpg");
 
-            // Default color , you can set yours before this line
-            string asciiChars = "@#S%?*+;:,. ";
-
-            //start by the height
-            for (int y = 0; y < resized.Height; y++)
+            if (File.Exists(file_location))
             {
-                //then width
-                for (int x = 0; x < resized.Width; x++)
-                {
-                    //color the pixel on x and y
-                    Color pixel = resized.GetPixel(x, y);
+                Console.WriteLine(" Logo location not found at: " + file_location);
+                
 
-                    // Convert to grayscale
-                    int gray = (pixel.R + pixel.G + pixel.B) / 3;
-
-                    // Map grayscale to ASCII
-                    int index = (gray * (asciiChars.Length - 1)) / 255;
-
-                    Console.Write(asciiChars[index]);
-                }
-                Console.WriteLine();
             }
+            Bitmap image = new Bitmap(file_location);
+
+            image = new Bitmap(image, new Size(100, 50)); // Resize the image to fit the console
+
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+
+            for (int h = 0; h < image.Height; h++)
+            {
+                for (int w = 0; w < image.Width; w++)
+                {
+                    Color pixelColor = image.GetPixel(w, h);
+                    int gray = (pixelColor.R + pixelColor.G + pixelColor.B) / 3; // Convert to grayscale
+                    char asciiChar = gray < 200 ? '.' : gray > 150 ? '*' : gray > 100 ? 'o' : gray > 50 ? '#' : '@'; // Choose character based on brightness
+                    Console.Write(asciiChar); // Print the character
+
+                }
+                Console.WriteLine(); // Move to the next line after each row
+            }
+            Console.WriteLine(); // Add an extra line after the logo
+
         }
-
-
     }
-    }
-    
 
+}
 

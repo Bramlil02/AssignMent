@@ -67,7 +67,7 @@
     <None Include="Resources\greet.wav" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\logo.jpg" />
+    <Content Include="logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
