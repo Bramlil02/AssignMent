@@ -96,7 +96,7 @@ namespace AssignMent
                 UInput = UInput.ToLower();
 
 
-                if (UInput.Contains("what can i ask"))
+                if (UInput.Contains("what can i ask?"))
                 {
                     Console.WriteLine("PBot: You can ask me about passwords, phishing, and safe browsing.");
 
