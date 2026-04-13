@@ -15,7 +15,7 @@ namespace AssignMent
             // Display header/title
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("=================================================================");
-            Console.WriteLine("            CYBERSECURITY AWARENESS BOT         ");
+            Console.WriteLine("          PETER CYBERSECURITY AWARENESS BOT         ");
             Console.WriteLine("=================================================================");
             Console.ResetColor();
             Console.WriteLine();
