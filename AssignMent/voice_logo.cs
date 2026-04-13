@@ -4,7 +4,7 @@ using System.Media;
 
 namespace AssignMent
 {//start of namespace
-    internal class voice_logo
+    public class voice_logo
     {//start of class
         public string full_path = AppDomain.CurrentDomain.BaseDirectory;
 
