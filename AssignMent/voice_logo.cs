@@ -3,13 +3,13 @@ using System.Drawing;
 using System.Media;
 
 namespace AssignMent
-{
+{//start of namespace
     internal class voice_logo
-    {
+    {//start of class
         public string full_path = AppDomain.CurrentDomain.BaseDirectory;
 
         public voice_logo()
-        {
+        {//start of constructor
 
             //Creating sound Player
             SoundPlayer player = new SoundPlayer("C:\\Users\\Student\\source\\repos\\AssignMent\\AssignMent\\Resources\\greet.wav");
@@ -20,7 +20,7 @@ namespace AssignMent
             Console.WriteLine("");
 
 
-    }//end of class
+        }//end of constructor
 
-    }
-}
+    }//end of class
+}//end of namespace

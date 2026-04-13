@@ -3,13 +3,14 @@ using System.IO;
 using System.Drawing;
 
 namespace AssignMent
-{
+{//start of namespace
 
 
     public class AsciiLogo
-    {
+    {//start of class
         public AsciiLogo()
-        {
+        {//start of constructor
+
             string logo_p = AppDomain.CurrentDomain.BaseDirectory;
 
             string path = logo_p.Replace("bin\\Debug\\", ""); // Adjust the path to point to the Resources folder
